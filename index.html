@@ -137,7 +137,7 @@
         .course-list li { margin-bottom: 15px; padding-left: 30px; position: relative; color: #ccc; }
         .course-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
-        /* Testimonials (Fixed - No Slider) */
+        /* Testimonials */
         .testimonial-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -179,17 +179,29 @@
 
         .footer-bottom { 
             display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
             border-top: 1px solid rgba(255,255,255,0.05); 
             margin-top: 60px; 
             padding-top: 40px; 
-            font-size: 0.8rem; 
-            color: #555; 
+            font-size: 0.85rem; 
+            color: #888; 
+            text-align: center;
         }
+
+        .footer-contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .footer-contact-info a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .footer-contact-info a:hover { color: var(--gold); }
         
         /* Social Icons */
-        .socials { display: flex; gap: 15px; align-items: center; }
+        .socials { display: flex; gap: 15px; align-items: center; margin-top: 10px; }
         .socials a { 
             display: flex; 
             align-items: center; 
@@ -214,9 +226,9 @@
             .hero-text { max-width: 100%; }
             .hero-image-container { justify-content: center; margin-top: 60px; }
             .hero-image-label { left: 50%; transform: rotate(0) translateX(-50%); bottom: -60px; }
-            .vertical-sidebar-text, .nav-links { display: none; }
-            .footer-bottom { flex-direction: column; gap: 20px; }
-            .course-info { text-align: center !important; }
+            .nav-links { display: none; }
+            .footer-brand p { margin: 0 auto 30px; }
+            .footer-contact-info { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -244,10 +256,9 @@
             </div>
 
             <div class="hero-image-container">
-               
-               
+                
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1000" alt="Self Publishing 101 Mockup" style="border-radius: 5px; transform: rotate(-2deg); box-shadow: 20px 20px 60px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1000" alt="Self Publishing 101" style="border-radius: 5px; transform: rotate(-2deg); box-shadow: 20px 20px 60px rgba(0,0,0,0.3);">
                 </div>
             </div>
         </div>
@@ -264,7 +275,7 @@
             <div class="course-info" style="text-align: left;">
                 <span class="section-label">The Visionary</span>
                 
-                <p>Mark Howard is a life and legacy coach with over 25 years of experience in leadership development and professional coaching. He believes that your story is your most valuable asset.</p></p>
+                <p style="margin-bottom: 20px;">Mark Howard believes every person has a story worth sharing. As the founder of Launchpad Publishers, he helps everyday people become published authors—whether they are sharing wisdom, pain, triumph, or the lessons life has taught them. For more than a decade, Mark has coached writers through the writing and self-publishing process, giving them the structure, encouragement, and confidence needed to bring their message to life.</p>
                 <p style="margin-bottom: 40px;">With over 25 years of leadership, management, and training experience, Mark understands how to guide others in growth. His approach is both practical and personal—meeting people where they are, and helping them move forward with clarity and purpose. A passionate author, podcast host, and entrepreneur, Mark is committed to helping others turn their ideas into impact and leave a legacy that lasts.</p>
                 <a href="mailto:mark@markhoward.today" class="btn-main">Connect with Mark</a>
             </div>
@@ -291,7 +302,7 @@
             </div>
             
             <div class="hero-image-container">
-               
+                
                 <div class="hero-image">
                     <img src="https://markhoward.today/public/img/banner2.png" alt="Self Publishing Banner" style="border-radius: 5px;">
                 </div>
@@ -299,7 +310,7 @@
         </div>
     </section>
 
-    <!-- Testimonials (Updated to Grid) -->
+    <!-- Testimonials -->
     <section id="testimonials">
         <span class="section-label">Success Stories</span>
         <h2 class="section-title">What They Say</h2>
@@ -329,7 +340,16 @@
                 <span class="section-label" style="color:var(--gold)">Listen & Subscribe</span>
                 <h2>The Mark Howard <i>Podcast.</i></h2>
                 <p>Join Mark Howard as he sits down with leaders and creators to discuss leadership, legacy, and impact.</p>
-                <a href="#" class="btn-main" style="background:var(--gold)">Subscribe on Spotify</a>
+                <a href="https://open.spotify.com/show/0dNv6XeqP0WpsQ3txpBhtT" target="_blank" class="btn-main" style="background:var(--gold)">Subscribe on Spotify</a>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Listen On</h4>
+                <ul>
+                    <li><a href="https://open.spotify.com/show/0dNv6XeqP0WpsQ3txpBhtT" target="_blank">Spotify</a></li>
+                    <li><a href="https://podcasts.apple.com/us/podcast/the-mark-howard-show/id1546102501" target="_blank">Apple Podcasts</a></li>
+                    <li><a href="https://www.iheart.com/podcast/966-the-mark-howard-show-76471060/" target="_blank">iHeartRadio</a></li>
+                </ul>
             </div>
             
             <div class="footer-col">
@@ -338,22 +358,20 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#course">The Course</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#podcast">Podcast</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:4798569528">479-856-9528</a></li>
-                    <li><a href="mailto:mark@markhoward.today">mark@markhoward.today</a></li>
-                    <li><a href="https://wa.me/14798569528">WhatsApp Chat</a></li>
+                    <li><a href="#bio">Meet Mark</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
+            <div class="footer-contact-info">
+                <a href="tel:4798569528">PH: 479-856-9528</a>
+                <a href="mailto:mark@markhoward.today">EMAIL: mark@markhoward.today</a>
+                <a href="https://wa.me/14798569528">WHATSAPP: +1 479-856-9528</a>
+            </div>
+            
             <div>© 2026 Mark Howard Today. All Rights Reserved.</div>
+            
             <div class="socials">
                 <a href="#" aria-label="Facebook" class="fb">
                     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
