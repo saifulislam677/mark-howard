@@ -137,12 +137,13 @@
         .course-list li { margin-bottom: 15px; padding-left: 30px; position: relative; color: #ccc; }
         .course-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
-        /* Testimonials */
-        .testimonial-container { width: 100%; overflow: hidden; padding: 20px 0; }
-        .testimonial-track { display: flex; width: calc(400px * 8); animation: scroll 40s linear infinite; }
-        .testimonial-track:hover { animation-play-state: paused; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-400px * 4)); } }
-        .testimonial-card { min-width: 360px; margin-right: 40px; background: var(--accent); padding: 50px; color: var(--text); }
+        /* Testimonials (Fixed - No Slider) */
+        .testimonial-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .testimonial-card { background: var(--accent); padding: 50px; color: var(--text); }
         .stars { color: var(--gold); margin-bottom: 20px; font-size: 1.2rem; }
 
         /* Footer */
@@ -187,7 +188,7 @@
             color: #555; 
         }
         
-        /* Social Icons - Square & Original Colors */
+        /* Social Icons */
         .socials { display: flex; gap: 15px; align-items: center; }
         .socials a { 
             display: flex; 
@@ -195,7 +196,7 @@
             justify-content: center; 
             width: 40px; 
             height: 40px; 
-            border-radius: 4px; /* Square with slight rounding */
+            border-radius: 4px; 
             transition: transform 0.3s ease;
         }
         .socials a:hover { transform: translateY(-3px); }
@@ -215,6 +216,7 @@
             .hero-image-label { left: 50%; transform: rotate(0) translateX(-50%); bottom: -60px; }
             .vertical-sidebar-text, .nav-links { display: none; }
             .footer-bottom { flex-direction: column; gap: 20px; }
+            .course-info { text-align: center !important; }
         }
     </style>
 </head>
@@ -242,7 +244,7 @@
             </div>
 
             <div class="hero-image-container">
-                <div class="hero-image-bg"></div>
+               
                 <div class="hero-image-label">Mark.</div>
                 <div class="hero-image">
                     <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1000" alt="Self Publishing 101 Mockup" style="border-radius: 5px; transform: rotate(-2deg); box-shadow: 20px 20px 60px rgba(0,0,0,0.3);">
@@ -251,7 +253,7 @@
         </div>
     </section>
 
-    <!-- Bio Section with Photo -->
+    <!-- Bio Section -->
     <section id="bio" style="background: var(--light);">
         <div class="course-grid">
             <div class="hero-image-container" style="justify-content: center;">
@@ -263,70 +265,64 @@
                 <span class="section-label">The Visionary</span>
                 <h2 class="section-title">A Message From Mark Howard</h2>
                 <p>Mark Howard is a life and legacy coach with over 25 years of experience in leadership development and professional coaching. He believes that your story is your most valuable asset.</p>
-                <p>His mission is to empower authors to find their voice, navigate the world of self-publishing, and leave a lasting impact through the written word.</p>
+                <p style="margin-bottom: 40px;">His mission is to empower authors to find their voice, navigate the world of self-publishing, and leave a lasting impact through the written word.</p>
                 <a href="mailto:mark@markhoward.today" class="btn-main">Connect with Mark</a>
             </div>
         </div>
     </section>
 
+    <!-- Course Section -->
     <section class="course-section" id="course">
         <div class="course-grid">
             <div class="course-info">
                 <span class="course-tag">Enrollment Open</span>
                 <h2 class="section-title">Self Publishing 101</h2>
-                <p>Your story belongs on a bookshelf. This course provides the blueprint for turning your manuscript into a professionally published book.</p>
                 <ul class="course-list">
-                    <li>Phase 1: Structuring your story for maximum impact.</li>
-                    <li>Phase 2: Professional formatting and cover design.</li>
-                    <li>Phase 3: Navigating Amazon and global distribution.</li>
-                    <li>Phase 4: Marketing strategies for the modern author.</li>
+                    <li>Over 10 years of helping people write and self publish!</li>
+                    <li>Learn how to get the ideas from your brain to a book!</li>
+                    <li>Learn how to use outsourcing sites to overcome all obstacles in your book publishing journey.</li>
+                    <li>Learn how to hire the right freelancers and get the best results.</li>
+                    <li>Learn how to publish on shoestring budget.</li>
+                    <li>Learn how to create softback, hardback and kindle version books with each title you do.</li>
+                    <li>Learn how to start telling the world your book is ready to be purchased.</li>
+                    <li>Learn how to tap into one of the best marketing strategies that exist in 2026.</li>
                 </ul>
-                <a href="#" class="btn-main" style="background: var(--gold);">Start The Course</a>
+                <a href="https://wa.me/14798569528" class="btn-main" style="background: var(--gold);">Start The Course</a>
             </div>
             
             <div class="hero-image-container">
-                <div style="color:#fff;" class="hero-image-label">Mark.</div>
+               
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1000" alt="Course Blueprint" style="border-radius: 5px;">
+                    <img src="https://markhoward.today/public/img/banner2.png" alt="Self Publishing Banner" style="border-radius: 5px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" style="padding: 100px 0;">
-        <div style="padding: 0 8%;">
-            <span class="section-label">Success Stories</span>
-            <h2 class="section-title">What They Say</h2>
-        </div>
-        <div class="testimonial-container">
-            <div class="testimonial-track">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"I learned so much and enjoyed what he had to say. Mark makes publishing feel possible."</p>
-                    <strong>– Sarah J.</strong>
-                </div>
-                <div class="testimonial-card" style="background: #eee;">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"The 'Self Publishing 101' course shifted my entire perspective. I'm finally an author!"</p>
-                    <strong>– James L.</strong>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Good info, fun and lively. Mark is a true leader and a great coach."</p>
-                    <strong>– Robert T.</strong>
-                </div>
-                <!-- Duplicate for seamless scroll -->
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Mark is a true leader and a great coach. His insights are invaluable."</p>
-                    <strong>– Emily R.</strong>
-                </div>
+    <!-- Testimonials (Updated to Grid) -->
+    <section id="testimonials">
+        <span class="section-label">Success Stories</span>
+        <h2 class="section-title">What They Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"I learned so much and enjoyed what he had to say. Mark makes publishing feel possible."</p>
+                <strong>– Sarah J.</strong>
+            </div>
+            <div class="testimonial-card" style="background: #eee;">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"The 'Self Publishing 101' course shifted my entire perspective. I'm finally an author!"</p>
+                <strong>– James L.</strong>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Good info, fun and lively. Mark is a true leader and a great coach."</p>
+                <strong>– Robert T.</strong>
             </div>
         </div>
     </section>
 
-    <!-- Podcast Section in Footer -->
+    <!-- Footer -->
     <footer class="footer-premium" id="podcast">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -359,7 +355,6 @@
         <div class="footer-bottom">
             <div>© 2026 Mark Howard Today. All Rights Reserved.</div>
             <div class="socials">
-                <!-- Square Icons with Brand Colors -->
                 <a href="#" aria-label="Facebook" class="fb">
                     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
